@@ -1,9 +1,12 @@
 function updateTime() {
   let currentTimeElement = document.querySelector("#current-time");
   let currentTime = moment();
+  let currentTimeZone = moment.tz.guess();
+  let currentTimeZoneElement = document.querySelector("#current-timezone");
   currentTimeElement.innerHTML = currentTime.format(
     "h:mm:ss [<small>]A[</small>]"
   );
+  currentTimeZoneElement.innerHTML = currentTimeZone;
   let losAngelesElement = document.querySelector("#los-angeles");
   if (losAngelesElement) {
     let losAngelesDateElement = losAngelesElement.querySelector(".date");
